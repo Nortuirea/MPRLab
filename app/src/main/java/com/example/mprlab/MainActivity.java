@@ -26,16 +26,14 @@ public class MainActivity extends AppCompatActivity {
         uname = findViewById(R.id.username);
         pwd = findViewById(R.id.password);
 
-        tview = findViewById(R.id.action_indicator);
-
-        String access_code = "";
-        Bundle b = getIntent().getExtras();
-        if (b != null){
-            access_code = b.getString("code");
-        }
-        if (access_code.equals("10")){
-            tview.setText("You just completed registration action");
-        }
+//        String access_code = "";
+//        Bundle b = getIntent().getExtras();
+//        if (b != null){
+//            access_code = b.getString("code");
+//        }
+//        if (access_code.equals("10")){
+//            tview.setText("You just completed registration action");
+//        }
 
         reg_bt = findViewById(R.id.register);
         reg_bt.setOnClickListener(new View.OnClickListener(){
@@ -68,7 +66,9 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                tview.setText("You just completed login action");
+                Intent i = new Intent(MainActivity.this, home.class);
+//                i.putExtra("code","2");
+                startActivity(i);
             }
         });
     }
