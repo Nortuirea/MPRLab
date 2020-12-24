@@ -28,7 +28,7 @@ public class home extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.actionbar, menu);
 
         MenuItem search = menu.findItem(R.id.ab_search);
-        //MenuItemCompat.GetActionView is deprecated
+        // MenuItemCompat.GetActionView is deprecated
         SearchView searchView = (SearchView) search.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
