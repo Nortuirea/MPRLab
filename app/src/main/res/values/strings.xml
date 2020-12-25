@@ -7,4 +7,5 @@
     <string name="action_indicator">Action</string>
     <string name="confirm_passwordET">Confirm Password</string>
     <string name="emailET">Email</string>
+    <string name="about_text">OK</string>
 </resources>

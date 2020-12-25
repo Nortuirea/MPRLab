@@ -3,6 +3,7 @@ package com.example.mprlab;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AlertDialogLayout;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
@@ -53,6 +54,9 @@ public class home extends AppCompatActivity {
                 return true;
             case R.id.ab_setting:
                 Toast.makeText(this, "You tapped setting",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.ab_about:
+                Toast.makeText(this, "Aplikasi MPR Oleh Irwanto, Yanuar, dan Gita",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.ab_logout:
                 AlertDialog.Builder logout_alert = new AlertDialog.Builder(this);

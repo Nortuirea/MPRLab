@@ -24,6 +24,12 @@
         />
 
     <item
+        android:id="@+id/ab_about"
+        android:title="About"
+        app:showAsAction="never"
+        />
+
+    <item
         android:id="@+id/ab_logout"
         android:title="Sign Out"
         app:showAsAction="never"
