@@ -1,0 +1,25 @@
+David Thomas & Andrew Hunt
+Robert C. Martin
+Steve McConnell
+Martin Fowler
+Eric Freeman & Bert Bates & Kathy Sierra & Elisabeth Robson
+Frederick P. Brooks Jr
+Robert C. Martin
+Michael Feathers
+Erich Gamma & Richard Helm & Ralph Johnson & John Vlissides
+Gayle Laakmann McDowell
+John Sonmez
+Steve Krug
+Charles Petzold
+Thomas H. Cormen & Charles E. Leiserson & Ronald L. Rivest & Clifford Stein
+Tom DeMarco & Tim Lister
+Jon Bentley
+Martin Fowler
+Harold Abelson & Gerald Jay Sussman & Julie Sussman
+Donald E. Knuth
+Eric Evans
+Peter Seibel
+Steve McConnell
+Cory Althoff
+Robert Sedgewick & Kevin Wayne
+Jez Humble & David Farley

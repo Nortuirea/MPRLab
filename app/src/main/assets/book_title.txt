@@ -1,0 +1,25 @@
+#1 The Pragmatic Programmer
+#2 Clean Code
+#3 Code Complete
+#4 Refactoring
+#5 Head First Design Patterns
+#6 The Mythical Man-Month
+#7 The Clean Coder
+#8 Working Effectively with Legacy Code
+#9 Design Patterns
+#10 Cracking the Code Interview
+#11 Soft Skills
+#12 Don't Make Me Think
+#13 Code
+#14 Introduction to Algorithms
+#15 Peopleware
+#16 Programming Pearls
+#17 Patterns of Enterprise Application Architecture
+#18 Structure and Interpretation of Computer Programs
+#19 The Art of Computer Programming
+#20 Domain-Driven Design
+#21 Coders at Work
+#22 Rapid Development
+#23 The Self-Taught Programmer
+#24 Algorithms
+#25 Continuous Delivery
