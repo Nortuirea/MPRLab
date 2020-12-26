@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#000000"
-        android:text="10 Buku Programming Terbaik"
+        android:text="Buku-Buku Programming Terbaik"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
