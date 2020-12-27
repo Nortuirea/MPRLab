@@ -117,7 +117,7 @@ public class home extends AppCompatActivity {
                 about.setMessage(
                                 "Dibuat Oleh:\n" +
                                 "1. Irwanto (171401084)\n" +
-                                "3. Gita Tarigan (171401077)\n" +
+                                "2. Gita Tarigan (171401077)\n" +
                                 "3. Yanuar Tumanggor (171401092)\n"
                 );
                 about.create().show();
