@@ -6,8 +6,19 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.UUID;
 
 public class Register extends AppCompatActivity {
 
@@ -16,6 +27,8 @@ public class Register extends AppCompatActivity {
     private EditText email;
     private EditText pwd;
     private EditText conf_pwd;
+    final private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://mprlab-3f9e3-default-rtdb.firebaseio.com/");
+    private DatabaseReference databaseReference = firebaseDatabase.getReference("User");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,26 +47,26 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 boolean fault = false;
 
-                String checker = uname.getText().toString().trim();
-                if (TextUtils.isEmpty(checker)){
+                String username = uname.getText().toString().trim();
+                if (TextUtils.isEmpty(username)){
                     uname.setError("Username cannot be empty!");
                     fault = true;
                 }
 
-                checker = email.getText().toString().trim();
-                if (TextUtils.isEmpty(checker)){
-                    uname.setError("Username cannot be empty!");
+                String mail = email.getText().toString().trim();
+                if (TextUtils.isEmpty(mail)){
+                    email.setError("Username cannot be empty!");
                     fault = true;
                 }
 
-                checker = pwd.getText().toString().trim();
-                if (TextUtils.isEmpty(checker)){
+                String password = pwd.getText().toString().trim();
+                if (TextUtils.isEmpty(password)){
                     pwd.setError("Password cannot be empty!");
                     fault = true;
                 }
 
-                checker = conf_pwd.getText().toString().trim();
-                if (TextUtils.isEmpty(checker)){
+                String conf_password = conf_pwd.getText().toString().trim();
+                if (TextUtils.isEmpty(conf_password)){
                     conf_pwd.setError("Password cannot be empty!");
                     fault = true;
                 }
@@ -68,11 +81,27 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
-                Intent i = new Intent(Register.this, MainActivity.class);
-                i.putExtra("code","10");
-                startActivity(i);
+                String randomUID = UUID.randomUUID().toString();
+                Data data = new Data(randomUID, username, mail, password);
+                databaseReference.child(randomUID).setValue(data.toObject()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Intent i = new Intent(Register.this, MainActivity.class);
+                        startActivity(i);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast toast = Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+
+//                Intent i = new Intent(Register.this, MainActivity.class);
+//                startActivity(i);
             }
         });
 
     }
 }
+

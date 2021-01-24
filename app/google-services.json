@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "573204641347",
+    "firebase_url": "https://mprlab-3f9e3-default-rtdb.firebaseio.com/",
+    "project_id": "mprlab-3f9e3",
+    "storage_bucket": "mprlab-3f9e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573204641347:android:22d325bdd2373759e846f6",
+        "android_client_info": {
+          "package_name": "com.example.mprlab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573204641347-jmpvfhgt88rae3ns809renlvk999rrto.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMrCeEk493xj8kA-MSLpHRh-LGWJbxoAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573204641347-jmpvfhgt88rae3ns809renlvk999rrto.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
