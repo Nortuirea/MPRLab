@@ -1,9 +1,13 @@
 package com.example.mprlab;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +28,7 @@ import java.util.Scanner;
 public class home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         setTitle("Programming Books");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
@@ -58,8 +63,15 @@ public class home extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        DbHelper dbHelper = new DbHelper(this);
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+
         final ArrayList<Model> dataChunk = new ArrayList<>();
+        int index = 0;
         while (scanner_title.hasNextLine() && scanner_author.hasNextLine() && scanner_description.hasNextLine()){
+            index += 1;
+//            System.out.println("Repeating scanner #"+index);
+//            Log.i("Data Processing","Churning data "+ index);
             Model buffer = new Model();
 
             buffer.title = scanner_title.nextLine();
@@ -67,6 +79,17 @@ public class home extends AppCompatActivity {
             buffer.description = scanner_description.nextLine();
 
             dataChunk.add(buffer);
+
+            ContentValues record = new ContentValues();
+            record.put(dbHelper.ATTR_TITLE, buffer.title);
+            record.put(dbHelper.ATTR_AUTHOR, buffer.author);
+            record.put(dbHelper.ATTR_DESCRIPTION, buffer.description);
+            if (!dbHelper.CheckIfExist(dbHelper.TABLE_NAME, dbHelper.ATTR_TITLE, buffer.title)){
+//                System.out.println("Is Database Open?"+ sqLiteDatabase.isOpen());
+//                System.out.println("Saving data to SQL Database "+index);
+//                Log.i("Data Saving","Database data "+ index);
+                sqLiteDatabase.insertOrThrow(dbHelper.TABLE_NAME, null, record);
+            }
         }
 
         Adapter myAdapter = new Adapter(this, R.layout.listview_items, dataChunk);
@@ -76,6 +99,9 @@ public class home extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(), dataChunk.get(position).title, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(home.this, Item.class);
+                intent.putExtra("id", position+1);
+                startActivity(intent);
             }
         });
     }
@@ -142,5 +168,7 @@ public class home extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 }
 
