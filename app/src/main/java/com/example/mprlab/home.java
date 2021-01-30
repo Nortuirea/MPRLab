@@ -132,14 +132,15 @@ public class home extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.ab_help:
-                Toast.makeText(this, "You tapped help",Toast.LENGTH_SHORT).show();
+                Intent myIntent = new Intent(home.this, help.class);
+                home.this.startActivity(myIntent);
                 return true;
             case R.id.ab_setting:
                 Toast.makeText(this, "You tapped setting",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.ab_about:
                 AlertDialog.Builder about = new AlertDialog.Builder(this);
-                about.setTitle("Aplikasi UTS MPR4");
+                about.setTitle("Programming Books");
                 about.setMessage(
                                 "Dibuat Oleh:\n" +
                                 "1. Irwanto (171401084)\n" +

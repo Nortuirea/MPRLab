@@ -13,6 +13,7 @@ public class Item extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("Book Description");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
 
