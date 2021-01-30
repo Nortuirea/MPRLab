@@ -22,28 +22,35 @@
         <TextView
             android:id="@+id/itemTitle"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:hint="Title Holder"
             android:text="TextView"
             android:textAlignment="center"
-            android:hint="Title Holder"
-            android:layout_marginTop="45dp"/>
+            android:textColor="#9C27B0"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/itemAuthor"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
             android:hint="Author holder"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
             android:text="TextView"
-            android:textAlignment="textEnd" />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/itemDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
             android:hint="Description holder"
+            android:paddingLeft="40sp"
+            android:paddingRight="30sp"
             android:text="TextView"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:textColor="#272727"
+            android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
