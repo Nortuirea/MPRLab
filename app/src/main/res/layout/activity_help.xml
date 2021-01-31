@@ -32,4 +32,11 @@
         android:textColor="@color/textColor"
         android:text="Pada pengaturan/settings, tersedia menu Night Mode yang bisa anda hidupkan atau matikan."
         android:textAlignment="center" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:text="Aplikasi ini juga dilengkapi dengan Google Authorization yang bisa digunakan untuk Sign in kedalam aplikasi."
+        android:textAlignment="center" />
 </LinearLayout>
