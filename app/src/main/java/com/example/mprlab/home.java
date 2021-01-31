@@ -136,7 +136,8 @@ public class home extends AppCompatActivity {
                 home.this.startActivity(myIntent);
                 return true;
             case R.id.ab_setting:
-                Toast.makeText(this, "You tapped setting",Toast.LENGTH_SHORT).show();
+                Intent myIntents = new Intent(home.this, settings.class);
+                home.this.startActivity(myIntents);
                 return true;
             case R.id.ab_about:
                 AlertDialog.Builder about = new AlertDialog.Builder(this);

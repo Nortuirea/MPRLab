@@ -8,4 +8,8 @@
     <string name="confirm_passwordET">Confirm Password</string>
     <string name="emailET">Email</string>
     <string name="about_text">OK</string>
+    <string name="hidup">Hidup</string>
+    <string name="mati">Mati</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="button">Button</string>
 </resources>

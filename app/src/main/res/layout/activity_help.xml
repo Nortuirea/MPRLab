@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     android:orientation="vertical"
     tools:context=".help">
 
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Programming Books"
         android:textAlignment="center"
-        android:textColor="#673AB7"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -21,6 +22,14 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
         android:text="Adalah aplikasi yang menampilkan informasi mengenai buku-buku programming terbaik. Mulai dari judul buku, penulis, hingga rangkuman dari buku-buku tersebut."
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:text="Pada pengaturan/settings, tersedia menu Night Mode yang bisa anda hidupkan atau matikan."
         android:textAlignment="center" />
 </LinearLayout>
