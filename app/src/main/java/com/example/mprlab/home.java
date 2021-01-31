@@ -20,6 +20,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -90,6 +94,7 @@ public class home extends AppCompatActivity {
 //                Log.i("Data Saving","Database data "+ index);
                 sqLiteDatabase.insertOrThrow(dbHelper.TABLE_NAME, null, record);
             }
+            sqLiteDatabase.close();
         }
 
         Adapter myAdapter = new Adapter(this, R.layout.listview_items, dataChunk);
@@ -155,6 +160,12 @@ public class home extends AppCompatActivity {
                 logout_alert.setMessage("Confirm Signing Out").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        GoogleSignInOptions gso = new GoogleSignInOptions.
+                                Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+                                build();
+                        GoogleSignInClient googleSignInClient= GoogleSignIn.getClient(getApplicationContext(),gso);
+                        googleSignInClient.signOut();
+
                         Intent i = new Intent(home.this, MainActivity.class);
                         startActivity(i);
                         finish();
